@@ -1,0 +1,33 @@
+{% extends "index.html" %}
+
+
+
+{% block content %}
+
+<a href="{% url 'new' %}">crete new blog</a>
+<div class="row"></div>
+<ol>
+    
+{% for x in object_list  %}
+<li>
+<div class="col-lg-8">
+    <h1>
+        Title : {{x.title}}
+    </h1>
+    <p>
+        Description : {{x.text}}
+    </p>
+
+    <p>
+        Detail :
+        <a href="{% url 'detailView' x.pk   %}">View Details</a>
+    </p>
+</div>
+
+
+</li>
+{% endfor %}
+
+</ol>
+</div>
+{% endblock content %}
